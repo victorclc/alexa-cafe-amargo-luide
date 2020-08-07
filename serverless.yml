@@ -1,0 +1,25 @@
+service: alexa-cafe-amargo-luide
+
+provider:
+  name: aws
+  region: us-east-1
+  stage: ${env:STAGE, 'dev'}
+  runtime: python3.8
+
+package:
+  exclude:
+    - .cache/**
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    cacheLocation: '.cache/'
+
+functions:
+  cafeAmargoLuide:
+    handler: skill.handler
+    events:
+      - alexaSkill: amzn1.ask.skill.e7d19ace-986d-4614-971a-902fc66c61d2

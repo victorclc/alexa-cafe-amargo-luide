@@ -1,0 +1,15 @@
+{
+  "name": "alexa-cafe-amargo-luide",
+  "version": "1.0.0",
+  "description": "Aproveite um café amargo do luide com a Alexa",
+  "main": "index.js",
+  "dependencies": {
+    "serverless-python-requirements": "^5.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \\\"Error: no tests specified\\\" && exit 1"
+  },
+  "author": "Victor Corte Lopes de Carvalho",
+  "license": "ISC"
+}
