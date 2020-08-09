@@ -5,6 +5,14 @@ from ask_sdk_core.handler_input import HandlerInput
 from ask_sdk_model import Response
 from ask_sdk_model.ui import SimpleCard
 from ask_sdk_core.dispatch_components import AbstractExceptionHandler
+from cafes import cafes
+import random
+
+CARD_TITLE = "Café amargo"
+
+
+def get_random_cafe():
+    return random.choice(cafes)
 
 
 class LaunchRequestHandler(AbstractRequestHandler):
@@ -14,11 +22,11 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Você chama de sonho pois sabe que é impossível"
+        speech_text = get_random_cafe()
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Café amargo", speech_text)).set_should_end_session(
-            True)
+            SimpleCard(CARD_TITLE, speech_text)).set_should_end_session(
+            False)
         return handler_input.response_builder.response
 
 
@@ -29,11 +37,11 @@ class GetNewCafeIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Só se arrepende quem tenta."
+        speech_text = get_random_cafe()
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Café amargo", speech_text)).set_should_end_session(
-            True)
+            SimpleCard(CARD_TITLE, speech_text)).set_should_end_session(
+            False)
         return handler_input.response_builder.response
 
 
@@ -44,10 +52,10 @@ class HelpIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "You can say hello to me!"
+        speech_text = 'Voce pode me pedir um café amargo.'
 
         handler_input.response_builder.speak(speech_text).ask(speech_text).set_card(
-            SimpleCard("Hello World", speech_text))
+            SimpleCard(CARD_TITLE, speech_text))
         return handler_input.response_builder.response
 
 
@@ -59,10 +67,10 @@ class CancelAndStopIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Goodbye!"
+        speech_text = "Nunca é tarde para desistir no meio do caminho. Até a próxima!"
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Hello World", speech_text)).set_should_end_session(True)
+            SimpleCard("Café amargo", speech_text)).set_should_end_session(True)
         return handler_input.response_builder.response
 
 
@@ -89,7 +97,7 @@ class AllExceptionHandler(AbstractExceptionHandler):
         # Log the exception in CloudWatch Logs
         print(exception)
 
-        speech = "Sorry, I didn't get it. Can you please say it again!!"
+        speech = "Fala direito, não entendi."
         handler_input.response_builder.speak(speech).ask(speech)
         return handler_input.response_builder.response
 
