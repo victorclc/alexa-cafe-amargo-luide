@@ -26,7 +26,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
         handler_input.response_builder.speak(speech_text).set_card(
             SimpleCard(CARD_TITLE, speech_text)).set_should_end_session(
-            False)
+            True)
         return handler_input.response_builder.response
 
 
@@ -41,7 +41,7 @@ class GetNewCafeIntentHandler(AbstractRequestHandler):
 
         handler_input.response_builder.speak(speech_text).set_card(
             SimpleCard(CARD_TITLE, speech_text)).set_should_end_session(
-            False)
+            True)
         return handler_input.response_builder.response
 
 
