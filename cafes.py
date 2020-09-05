@@ -76,4 +76,13 @@ cafes = ['Não tente disfarçar seus erros com memes autodepreciativos.',
            'Façam o que esperam de você: nada.',
            'Não deixe que o silêncio dela te impeça de seguir se humilhando e puxando assunto.',
            'Claro que ele lembra de você. Quando o assunto são pessoas insuportáveis.',
-           'Compre aquilo que você não precisa para impressionar quem não se importa com você.']
+           'Compre aquilo que você não precisa para impressionar quem não se importa com você.',
+           'Acredite em si mesmo e seja o primeiro a se decepcionar.',
+           'Sonhe com ela enquanto ela se realiza com outro.',
+           'Tente até desistir.',
+           'O frio é ainda pior quando você se lembra que ela se aquece com outro.',
+           'Porque deixar pra amanhã algo que você pode desistir hoje?',
+           'Estar sempre triste evita que você fique na bad.',
+           'Essa dor só irá embora quando você aceitar que ela não é mais sua.',
+           'Estão demorando pra reconhecer seu talento porque talvez você não tenha nenhum.'
+           ]
